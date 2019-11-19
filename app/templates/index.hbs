@@ -1,0 +1,103 @@
+<div class="bg-gray-300">
+  <div class="flex p-8 justify-around">
+    <div class="w-1/4 p-4 shadow-lg bg-white">
+      <h2 class="text-xl">Single Nested</h2>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list1 as |child|}}
+          <AnimatedContainer class="bg-blue-500 p-1">
+            {{child}}
+          </AnimatedContainer>
+        {{/animated-each}}
+      </AnimatedContainer>
+    </div>
+
+    <div class="w-1/4 p-4 shadow-lg bg-white">
+      <h2 class="text-xl">Double Nested</h2>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list2 as |item|}}
+          <AnimatedContainer class="bg-blue-500 p-1">
+            {{#animated-each item as |child|}}
+              <AnimatedContainer class="bg-red-500 p-1">
+                {{child}}
+              </AnimatedContainer>
+            {{/animated-each}}
+          </AnimatedContainer>
+        {{/animated-each}}
+      </AnimatedContainer>
+
+      <h3 class="text-large">With Inner &lt;div&gt;</h3>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list2 as |item|}}
+          <div>
+            <AnimatedContainer class="bg-blue-500 p-1">
+              {{#animated-each item as |child|}}
+                <AnimatedContainer class="bg-red-500 p-1">
+                  {{child}}
+                </AnimatedContainer>
+              {{/animated-each}}
+            </AnimatedContainer>
+          </div>
+        {{/animated-each}}
+      </AnimatedContainer>
+    </div>
+
+    <div class="w-1/4 p-4 shadow-lg bg-white">
+      <h2 class="text-xl">Triple Nested</h2>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list3 as |item|}}
+          <AnimatedContainer class="bg-blue-500 p-1">
+            {{#animated-each item as |child|}}
+              <AnimatedContainer class="bg-red-500 p-1">
+                {{#animated-each child as |grandchild|}}
+                  <AnimatedContainer class="bg-yellow-500 p-1">
+                    {{grandchild}}
+                  </AnimatedContainer>
+                {{/animated-each}}
+              </AnimatedContainer>
+            {{/animated-each}}
+          </AnimatedContainer>
+        {{/animated-each}}
+      </AnimatedContainer>
+
+      <h3 class="text-large">With Inner &lt;div&gt;</h3>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list3 as |item|}}
+          <div class="bg-blue-500 p-1">
+            <AnimatedContainer>
+              {{#animated-each item as |child|}}
+                <AnimatedContainer class="bg-red-500 p-1">
+                  {{#animated-each child as |grandchild|}}
+                    <AnimatedContainer class="bg-yellow-500 p-1">
+                      <div>{{grandchild}}</div>
+                    </AnimatedContainer>
+                  {{/animated-each}}
+                </AnimatedContainer>
+              {{/animated-each}}
+            </AnimatedContainer>
+          </div>
+        {{/animated-each}}
+      </AnimatedContainer>
+
+      <h3 class="text-large">With Inner-inner &lt;div&gt;</h3>
+      <AnimatedContainer class="bg-gray-500 p-1">
+        {{#animated-each this.list3 as |item|}}
+          <div class="bg-blue-500 p-1">
+            <AnimatedContainer>
+              {{#animated-each item as |child|}}
+                <div class="bg-red-500 p-1">
+                  <AnimatedContainer>
+                    {{#animated-each child as |grandchild|}}
+                      <AnimatedContainer class="bg-yellow-500 p-1">
+                        {{grandchild}}
+                      </AnimatedContainer>
+                    {{/animated-each}}
+                  </AnimatedContainer>
+                </div>
+              {{/animated-each}}
+            </AnimatedContainer>
+          </div>
+        {{/animated-each}}
+      </AnimatedContainer>
+    </div>
+  </div>
+</div>
